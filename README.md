@@ -1,2 +1,2 @@
 # ia-skills
-Repositorio para skill de IA (claude, copilot, gemini...)
+Repositório para armazenar skills de IA (claude, copilot, gemini...)
