@@ -1,4 +1,11 @@
-# Skill: Análise de Ações e Fundos Imobiliários (FIIs)
+---
+name: analise-acoes-fiis
+description: "Analisa ações e fundos imobiliários (FIIs) da B3 com dados oficiais. Use para análise fundamentalista, riscos, tese e projeções de ativos financeiros."
+argument-hint: "<TICKER>"
+user-invocable: true
+---
+
+# Análise de Ações e Fundos Imobiliários (FIIs)
 
 ## Objetivo
 Esta skill instrui um assistente de IA (Claude, Copilot, Gemini ou similar) a realizar
@@ -17,9 +24,14 @@ O resultado é sempre composto por **dois entregáveis**:
 ---
 
 ## Como usar
-Invoque com um comando do tipo:
-> "Analise o FII [TICKER] usando a skill de análise de ativos"
-> "Faça a análise fundamentalista da ação [TICKER]"
+No GitHub Copilot Chat, invoque a skill pelo comando slash e informe o ticker:
+
+> `/analise-acoes-fiis HGLG11`
+> `/analise-acoes-fiis PETR4`
+
+Use o ticker de uma ação ou de um FII listado na B3. Ao ser invocada, a skill deve
+usar o ticker informado para identificar o ativo e executar o fluxo de análise abaixo.
+Se nenhum ticker for informado, solicite-o antes de iniciar a análise.
 
 O assistente deve seguir o fluxo abaixo integralmente antes de responder, e ao final deve
 entregar **o relatório em texto** (seção 4) **e o dashboard executivo visual** (seção 5).
@@ -305,7 +317,7 @@ entre os placeholders `{{ }}` e repetindo os blocos de cards/listas conforme nec
 Esta skill é escrita em linguagem natural estruturada (Markdown), sem dependências de
 ferramentas específicas de uma única plataforma. Pode ser usada como:
 - **Claude**: como Skill própria (salvar como referência de instruções) ou como instrução de projeto/system prompt; o dashboard é publicado como Artifact/Canvas
-- **GitHub Copilot**: como arquivo de instruções customizadas (`.github/copilot-instructions.md` ou prompt file); o dashboard é gerado como arquivo `.html` no repositório/workspace
+- **GitHub Copilot**: como skill de workspace em `.github/skills/analise-acoes-fiis/SKILL.md`, invocável por `/analise-acoes-fiis <TICKER>`; o dashboard é gerado como arquivo `.html` no repositório/workspace
 - **Gemini**: como system instruction / contexto de Gem personalizado; o dashboard é entregue como arquivo `.html` para download/abertura no navegador
 
 O relatório em texto (Markdown) funciona em qualquer plataforma sem adaptação. O dashboard
